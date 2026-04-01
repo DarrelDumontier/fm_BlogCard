@@ -9,7 +9,8 @@ type BlogCardParameters = {
 }
 
 export default function BlogCard({article, className}: BlogCardParameters) {
-
+    const dateAsString = article.publishDate.toISOString().split('T')[0];
+    const formattedDate = new Intl.DateTimeFormat('en-GB', {day: '2-digit', month:'short', year:'numeric'}).format(article.publishDate);
 
     return (
         <div className={`@container box-border  w-80 sm:w-96 ${className || ''}`}>
@@ -26,7 +27,9 @@ export default function BlogCard({article, className}: BlogCardParameters) {
                 
                     <img src={blogCardImage} alt="" className="rounded-lg"/>
                     <div><span className='p-2  text-(length:--cardMetaFont)  font-extrabold bg-theme-yellow text-theme-darkgray'>{article.category}</span></div>            
-                    <p className='text-(length:--cardMetaFont)  '>Published  {new Intl.DateTimeFormat('en-GB', {day: '2-digit', month:'short', year:'numeric'}).format(article.publishDate)}</p>           
+                    <p className='text-(length:--cardMetaFont)  '>
+                        Published <time dateTime={dateAsString}>{formattedDate}</time>
+                    </p>           
                     <h1 className='font-extrabold text-(length:--cardTitleFont) hover:cursor-pointer hover:text-theme-yellow text-theme-darkgray'>{article.title}</h1>
                     <p className='line-clamp-3'>{article.description}</p>             
                     <CardAuthorSummary  author={article.author} />
