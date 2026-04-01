@@ -26,10 +26,12 @@ export default function BlogCard({article, className}: BlogCardParameters) {
                     ">
                 
                     <img src={blogCardImage} alt="" className="rounded-lg"/>
+                    <header className='contents'>
                     <div><span className='p-2  text-(length:--cardMetaFont)  font-extrabold bg-theme-yellow text-theme-darkgray'>{article.category}</span></div>            
                     <p className='text-(length:--cardMetaFont)  '>
                         Published <time dateTime={dateAsString}>{formattedDate}</time>
-                    </p>           
+                    </p>    
+                    </header>       
                     <h1 className='font-extrabold text-(length:--cardTitleFont) hover:cursor-pointer hover:text-theme-yellow text-theme-darkgray'>{article.title}</h1>
                     <p className='line-clamp-3'>{article.description}</p>             
                     <CardAuthorSummary  author={article.author} />
