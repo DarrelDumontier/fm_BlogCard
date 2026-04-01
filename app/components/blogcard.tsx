@@ -41,10 +41,10 @@ export default function BlogCard({article, className}: BlogCardParameters) {
 }
 
 function CardAuthorSummary({author}: {author:AuthorDto}) {
-    return <div className='flex flex-row gap-2 items-center'>
+    return <footer className='flex flex-row gap-2 items-center'>
         <img src={author.profilePath} alt={`${author.firstName} ${author.lastName}'s profile picture`}
             className='w-8' />
         <span className='text-(length:--cardMetaFont)  font-extrabold'>{author.firstName} {author.lastName}</span>
 
-    </div>;
+    </footer>;
 }
