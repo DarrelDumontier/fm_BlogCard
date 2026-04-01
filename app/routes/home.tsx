@@ -23,7 +23,7 @@ export function meta({loaderData}: Route.MetaArgs) {
 
 export default function Home({loaderData}: Route.ComponentProps) {
   return (
-    <main className="h-full w-full flex justify-center items-center">
+    <main className="min-h-screen w-full flex justify-center items-center">
       <BlogCard  article={loaderData}  />
 
     </main>
