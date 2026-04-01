@@ -30,7 +30,7 @@ export function getDefaultArticle(): BlogArticleDto {
             id: 1,
             firstName: "Greg",
             lastName: "Hooper",
-            profilePath: "../../assets/images/image-avatar.webp"
+            profilePath: "/image-avatar.webp"
 
         }        
     }

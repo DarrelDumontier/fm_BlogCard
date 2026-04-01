@@ -23,7 +23,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: "icon",
-    href: "../assets/images/favicon-32x32.png"
+    href: "/favicon-32x32.png"
   }
 ];
 
